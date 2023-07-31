@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Playball&family=Proza+Libre&family=Righteous&display=swap');
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+}
+/* 
+font-family: 'Playball', cursive;
+font-family: 'Righteous', cursive;
+font-family: 'Proza Libre', sans-serif;
+*/
+h1{
+    font-family: 'Playball', cursive;
+    font-size: 3em;
+}
+h2{
+    font-family: 'Righteous', cursive;
+}
+.text{
+    font-family: 'Proza Libre', sans-serif;
+}
+html{
+    height: 100%;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    gap: 4%;
+    height: inherit;
+    width: 100%;
+}
+.container{
+    height: 50%;
+    display: flex;
+    align-items: flex-end;
+}
+.buttons{
+    display: flex;
+    gap: 2%;
+}
+button{
+    font-family: inherit;
+    width: 150px;
+    padding: 1%;
+}
+button:hover{
+    cursor: pointer;
+}
+#init{
+    color: white;
+    background-color: black;
+}
+.bar{
+    width: 10px;
+    margin: 0 1px;
+    background: black;
+}
+
