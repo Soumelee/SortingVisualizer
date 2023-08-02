@@ -18,7 +18,7 @@ function showBars(move) {
     document.getElementById("container").innerHTML = "";
     for (let i = 0; i < array.length; i++) {
         const bar = document.createElement("div");
-        bar.style.height = array[i] * 100 + "%";
+        bar.style.height = Math.floor(array[i] * 100) + "%";
         bar.classList.add("bar");
 
         if (move && move.indices.includes(i)) {
