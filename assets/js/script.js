@@ -1,17 +1,15 @@
-document.getElementById("init").onclick = function () { init() };
-
 const n = 20;
 const array = [];
 init();
 function init() {
     for (let i = 0; i < n; i++) {
-        array[i] = Math.random();
+        array[i] = Math.random()*(1.0 - 0.1) + 0.1;
     }
     showBars();
 }
-
-function wait(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+const time=200;
+function wait() {
+    return new Promise(resolve => setTimeout(resolve, time));
 }
 
 function showBars(move) {

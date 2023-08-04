@@ -3,7 +3,6 @@ async function mergeSort(){
     const bar = document.querySelectorAll(".bar");
     let l = 0, r = bar.length - 1;
     mergeSortFun(bar, l, r);
-    console.log("sort complete");
 }
 
 async function mergeSortFun(bar, l, r) {
@@ -26,20 +25,20 @@ async function merge(bar, l, m, r) {
     for (let i = 0; i < size1; i++) {
         temp1[i] = bar[l + i].style.height;
         
-        await wait(200);
+        await wait();
         bar[l + i].style.background="#9B7EDE";//purple left temp array
     }
     for (let i = 0; i < size2; i++) {
         temp2[i] = bar[m + 1 + i].style.height;
         
-        await wait(200);
+        await wait();
         bar[m + 1 + i].style.background="#E1BC29";//yellow right temp array
     }
     
-    await wait(200);
+    await wait();
     let i = 0, j = 0, k = l;
     while (i < size1 && j < size2) {
-        await wait(200);
+        await wait();
         if (parseInt(temp1[i]) <= parseInt(temp2[j])) {
             if(size1+size2==bar.length){
                 bar[k].style.background="#08605F";//final sorted green bars
@@ -59,7 +58,7 @@ async function merge(bar, l, m, r) {
         k++;
     }
     while (i < size1) {
-        await wait(200);
+        await wait();
         if(size1+size2==bar.length){
             bar[k].style.background="#08605F";//final sorted green bars
         }
@@ -69,7 +68,7 @@ async function merge(bar, l, m, r) {
         k++;
     }
     while (j < size2) {
-        await wait(200);
+        await wait();
         if(size1+size2==bar.length){
             bar[k].style.background="#08605F";//final sorted green bars
         }

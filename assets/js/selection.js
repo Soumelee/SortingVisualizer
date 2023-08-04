@@ -7,7 +7,7 @@ async function selectionSort(){
         for (let j = i+1; j < bar.length; j++) {
             bar[j].style.background="#001F54"; //current j bar is blue
             
-            await wait(200);
+            await wait();
 
             if(parseInt(bar[j].style.height) < parseInt(bar[minValue].style.height)){
                 if(minValue!=i){
@@ -21,7 +21,7 @@ async function selectionSort(){
                 bar[j].style.background="black";
             }
         }
-        // await wait(200);
+        // await wait();
         //swap
         let temp=bar[i].style.height;
         bar[i].style.height=bar[minValue].style.height;
