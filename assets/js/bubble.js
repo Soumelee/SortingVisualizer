@@ -6,7 +6,7 @@ async function bubbleSort(){
             bar[j].style.background="#001F54";
             bar[j-1].style.background="#001F54";
             
-            await wait(200);
+            await wait();
 
             if(parseInt(bar[j-1].style.height)>(parseInt(bar[j].style.height))){
                 //swap
