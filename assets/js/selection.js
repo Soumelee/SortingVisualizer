@@ -1,6 +1,7 @@
 async function selectionSort(){
     console.log("Selection sort");
     const bar=document.querySelectorAll(".bar");
+    const barBefore=document.querySelectorAll(".bar-before");
     for (let i = 0; i < bar.length; i++) {
         let minValue=i;
         bar[i].style.background="#9B7EDE";//i bar where swap will happen is purple
@@ -24,8 +25,8 @@ async function selectionSort(){
         // await wait();
         //swap
         let temp=bar[i].style.height;
-        bar[i].style.height=bar[minValue].style.height;
-        bar[minValue].style.height=temp;
+        bar[i].style.height=bar[minValue].style.height;     barBefore[i].textContent=parseFloat(bar[i].style.height);
+        bar[minValue].style.height=temp;       barBefore[minValue].textContent=parseFloat(bar[minValue].style.height);
         bar[minValue].style.background="black";
         bar[i].style.background="#08605F";
     }

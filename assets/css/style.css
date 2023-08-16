@@ -51,8 +51,13 @@ button:hover{
     background-color: black;
 }
 .bar{
-    width: 10px;
-    margin: 0 1px;
+    width: 20px;
+    margin: 0 5px;
     background: black;
+    position: relative;
+}
+.bar-before{
+    color: white;
+    text-align: center;
 }
 

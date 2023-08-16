@@ -1,6 +1,7 @@
 async function insertionSort(){
     console.log("Insertion sort");
     const bar=document.querySelectorAll(".bar");
+    const barBefore=document.querySelectorAll(".bar-before");
     let key;
     bar[0].style.background="#08605F";
 
@@ -13,7 +14,7 @@ async function insertionSort(){
         while((j >=0) && (bar[j].style.height)>key){
             
             bar[j].style.background="#001F54";
-            bar[j+1].style.height=bar[j].style.height;
+            bar[j+1].style.height=bar[j].style.height;  barBefore[j+1].textContent=parseFloat(bar[j+1].style.height);
             j=j-1;
             await wait();
             for (let k = i; k >=0; k--) {
@@ -21,7 +22,7 @@ async function insertionSort(){
             }
         }
 
-        bar[j+1].style.height=key;
+        bar[j+1].style.height=key;  barBefore[j+1].textContent=parseFloat(bar[j+1].style.height);
         bar[i].style.background="#08605F";
     }
 }

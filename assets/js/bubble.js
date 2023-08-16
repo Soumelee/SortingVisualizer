@@ -1,6 +1,7 @@
 async function bubbleSort(){
     console.log("Bubble sort");
     const bar=document.querySelectorAll(".bar");
+    const barBefore=document.querySelectorAll(".bar-before");
     for (let i = 0; i < bar.length; i++) {
         for (let j = 1; j < bar.length-i; j++) {
             bar[j].style.background="#001F54";
@@ -11,8 +12,9 @@ async function bubbleSort(){
             if(parseInt(bar[j-1].style.height)>(parseInt(bar[j].style.height))){
                 //swap
                 let temp=bar[j-1].style.height;
-                bar[j-1].style.height=bar[j].style.height;
-                bar[j].style.height=temp;
+                bar[j-1].style.height=bar[j].style.height;  barBefore[j-1].textContent=parseFloat(bar[j-1].style.height)
+                bar[j].style.height=temp;   barBefore[j].textContent=parseFloat(bar[j].style.height);
+
             }
             bar[j].style.background="black";
             bar[j-1].style.background="black";

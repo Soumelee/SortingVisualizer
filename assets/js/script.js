@@ -1,4 +1,4 @@
-const n = 20;
+const n = 10;//current max 40 looks good
 const array = [];
 init();
 function init() {
@@ -18,6 +18,11 @@ function showBars(move) {
         const bar = document.createElement("div");
         bar.style.height = Math.floor(array[i] * 100) + "%";
         bar.classList.add("bar");
+        
+        const beforeElement = document.createElement("div"); // Create a real element for ::before content
+        beforeElement.classList.add("bar-before");
+        beforeElement.textContent = Math.floor(array[i] * 100);
+        bar.appendChild(beforeElement);
 
         if (move && move.indices.includes(i)) {
             bar.style.backgroundColor = move.type == "swap" ? "#960200" : "#C5AF1B";

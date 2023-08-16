@@ -1,21 +1,22 @@
 async function mergeSort(){
     console.log("Merge sort");
     const bar = document.querySelectorAll(".bar");
+    const barBefore=document.querySelectorAll(".bar-before");
     let l = 0, r = bar.length - 1;
-    mergeSortFun(bar, l, r);
+    mergeSortFun(bar, barBefore, l, r);
 }
 
-async function mergeSortFun(bar, l, r) {
+async function mergeSortFun(bar, barBefore, l, r) {
     
     if (l >= r) {
         return;
     }
     let m = Math.floor(l + (r - l) / 2);
-    await mergeSortFun(bar, l, m);
-    await mergeSortFun(bar, m + 1, r);
-    await merge(bar, l, m, r);
+    await mergeSortFun(bar, barBefore, l, m);
+    await mergeSortFun(bar, barBefore, m + 1, r);
+    await merge(bar, barBefore, l, m, r);
 }
-async function merge(bar, l, m, r) {
+async function merge(bar, barBefore, l, m, r) {
     const size1 = m - l + 1;
     const size2 = r - m;
     
@@ -44,7 +45,7 @@ async function merge(bar, l, m, r) {
                 bar[k].style.background="#08605F";//final sorted green bars
             }
             else bar[k].style.background="#2FEEEB";//temp sorted light green
-            bar[k].style.height = temp1[i];
+            bar[k].style.height = temp1[i];     barBefore[k].textContent=parseFloat(bar[k].style.height);
             i++;
         }
         else {
@@ -52,7 +53,7 @@ async function merge(bar, l, m, r) {
                 bar[k].style.background="#08605F";//final sorted green bars
             }
             else bar[k].style.background="#2FEEEB";//temp sorted light green
-            bar[k].style.height = temp2[j];
+            bar[k].style.height = temp2[j];     barBefore[k].textContent=parseFloat(bar[k].style.height);
             j++;
         }
         k++;
@@ -63,7 +64,7 @@ async function merge(bar, l, m, r) {
             bar[k].style.background="#08605F";//final sorted green bars
         }
         else bar[k].style.background="#2FEEEB";//temp sorted light green
-        bar[k].style.height = temp1[i];
+        bar[k].style.height = temp1[i];     barBefore[k].textContent=parseFloat(bar[k].style.height);
         i++;
         k++;
     }
@@ -73,7 +74,7 @@ async function merge(bar, l, m, r) {
             bar[k].style.background="#08605F";//final sorted green bars
         }
         else bar[k].style.background="#2FEEEB";//temp sorted light green 
-        bar[k].style.height = temp2[j];
+        bar[k].style.height = temp2[j];     barBefore[k].textContent=parseFloat(bar[k].style.height);
         j++;
         k++;
     }

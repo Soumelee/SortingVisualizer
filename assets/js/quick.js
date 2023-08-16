@@ -2,15 +2,16 @@
 async function quickSort() {
     console.log("Quick sort");
     const bar = document.querySelectorAll(".bar");
+    const barBefore=document.querySelectorAll(".bar-before");
     let l = 0, r = bar.length - 1;
-    await quickSortfun(bar, l, r);
+    await quickSortfun(bar, barBefore, l, r);
 }
-async function quickSortfun(bar, l, r) {
+async function quickSortfun(bar, barBefore, l, r) {
 
     if (l < r) {
-        let pivotIndex = await partition(bar, l, r);
-        await quickSortfun(bar, l, pivotIndex - 1);
-        await quickSortfun(bar, pivotIndex + 1, r);
+        let pivotIndex = await partition(bar, barBefore, l, r);
+        await quickSortfun(bar, barBefore, l, pivotIndex - 1);
+        await quickSortfun(bar, barBefore, pivotIndex + 1, r);
     }
     else {
         if (l >= 0 && r >= 0 && l < bar.length && r < bar.length) {
@@ -19,7 +20,7 @@ async function quickSortfun(bar, l, r) {
         }
     }
 }
-async function partition(bar, l, r) {
+async function partition(bar, barBefore, l, r) {
     //pivot is r
     let i = l - 1;
     bar[r].style.background = "#a62639";//pivot element red 
@@ -31,8 +32,8 @@ async function partition(bar, l, r) {
             i++;
             //swap
             let temp = bar[i].style.height;
-            bar[i].style.height = bar[j].style.height;
-            bar[j].style.height = temp;
+            bar[i].style.height = bar[j].style.height;      barBefore[i].textContent=parseFloat(bar[i].style.height);
+            bar[j].style.height = temp;     barBefore[j].textContent=parseFloat(bar[j].style.height);
 
             bar[i].style.background = "orange";//less than pivot orange
             if (i != j) bar[j].style.background = "orange";
@@ -47,8 +48,8 @@ async function partition(bar, l, r) {
     await wait();
     //swap pivot to correct position
     let temp = bar[i].style.height;
-    bar[i].style.height = bar[r].style.height;
-    bar[r].style.height = temp;
+    bar[i].style.height = bar[r].style.height;      barBefore[i].textContent=parseFloat(bar[i].style.height);
+    bar[r].style.height = temp;     barBefore[r].textContent=parseFloat(bar[r].style.height);
 
     bar[r].style.background = "pink";
     bar[i].style.background = "#08605f";
