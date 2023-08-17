@@ -45,6 +45,10 @@ function showBars(array, move) {
         document.getElementById("container").appendChild(bar);
     }
 }
+function customSize() {
+    document.getElementById("customArray").value="";
+    custom();
+}
 function custom() {
     const lenInput = document.getElementById("len");
     const numberOfBars = parseInt(lenInput.value, 10);
