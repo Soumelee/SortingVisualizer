@@ -57,8 +57,12 @@ button:hover{
     position: relative;
 }
 .bar-before{
+    position: absolute;
     color: white;
     text-align: center;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    bottom: 0;
 }
 .bar-after{
     position: absolute;
