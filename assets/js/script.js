@@ -22,11 +22,14 @@ function wait() {
 }
 
 function showBars(array, move) {
-    document.getElementById("container").innerHTML = "";
+    const container = document.getElementById("container");
+    container.innerHTML = "";
+    const maxElement = Math.max(...array);
+
     for (let i = 0; i < array.length; i++) {
-        const bar = document.createElement("div");
-        // bar.style.height = Math.floor(array[i] * 100) + "%";
-        bar.style.height = array[i] + "%";
+        const bar = document.createElement("div");   
+        const relativeHeight = (array[i] / maxElement) * 100;     
+        bar.style.height = relativeHeight + "%";
         bar.classList.add("bar");
 
         const beforeElement = document.createElement("div"); 
@@ -42,7 +45,7 @@ function showBars(array, move) {
         if (move && move.indices.includes(i)) {
             bar.style.backgroundColor = move.type == "swap" ? "#960200" : "#C5AF1B";
         }
-        document.getElementById("container").appendChild(bar);
+        container.appendChild(bar);
     }
 }
 function customSize() {
