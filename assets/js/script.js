@@ -29,10 +29,15 @@ function showBars(array, move) {
         bar.style.height = array[i] + "%";
         bar.classList.add("bar");
 
-        const beforeElement = document.createElement("div"); // Create a real element for ::before content
+        const beforeElement = document.createElement("div"); 
         beforeElement.classList.add("bar-before");
         beforeElement.textContent = array[i];
         bar.appendChild(beforeElement);
+
+        const afterElement = document.createElement("div"); 
+        afterElement.classList.add("bar-after");
+        afterElement.textContent = i;
+        bar.appendChild(afterElement);
 
         if (move && move.indices.includes(i)) {
             bar.style.backgroundColor = move.type == "swap" ? "#960200" : "#C5AF1B";
