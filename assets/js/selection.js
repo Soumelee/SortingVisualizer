@@ -10,24 +10,29 @@ async function selectionSort(){
             
             await wait();
 
-            if(parseInt(bar[j].style.height) < parseInt(bar[minValue].style.height)){
+            if(parseInt(barBefore[j].textContent) < parseInt(barBefore[minValue].textContent)){
                 if(minValue!=i){
-                    bar[minValue].style.background="black";//old min is black
+                    bar[minValue].style.background="gray";//old min is black
                 }
                 
                 minValue=j;
                 bar[minValue].style.background="#A62639";//new min red bar
             }
             else{
-                bar[j].style.background="black";
+                bar[j].style.background="gray";
             }
         }
         // await wait();
         //swap
         let temp=bar[i].style.height;
-        bar[i].style.height=bar[minValue].style.height;     barBefore[i].textContent=parseFloat(bar[i].style.height);
-        bar[minValue].style.height=temp;       barBefore[minValue].textContent=parseFloat(bar[minValue].style.height);
-        bar[minValue].style.background="black";
+        bar[i].style.height=bar[minValue].style.height;     
+        bar[minValue].style.height=temp;  
+
+        let tempBefore=barBefore[i].textContent;
+        barBefore[i].textContent=barBefore[minValue].textContent;     
+        barBefore[minValue].textContent=tempBefore;   
+
+        bar[minValue].style.background="gray";
         bar[i].style.background="#08605F";
     }
 }

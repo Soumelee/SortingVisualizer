@@ -9,17 +9,20 @@ async function bubbleSort(){
             
             await wait();
 
-            if(parseInt(bar[j-1].style.height)>(parseInt(bar[j].style.height))){
+            if(parseInt(barBefore[j-1].textContent) > parseInt(barBefore[j].textContent)){
                 //swap
                 let temp=bar[j-1].style.height;
-                bar[j-1].style.height=bar[j].style.height;  barBefore[j-1].textContent=parseFloat(bar[j-1].style.height)
-                bar[j].style.height=temp;   barBefore[j].textContent=parseFloat(bar[j].style.height);
+                bar[j-1].style.height=bar[j].style.height;  //barBefore[j-1].textContent=parseFloat(bar[j-1].style.height)
+                bar[j].style.height=temp;   //barBefore[j].textContent=parseFloat(bar[j].style.height);
+
+                let temp2=barBefore[j-1].textContent;
+                barBefore[j-1].textContent=barBefore[j].textContent;
+                barBefore[j].textContent=temp2;
 
             }
-            bar[j].style.background="black";
-            bar[j-1].style.background="black";
+            bar[j].style.background="gray";
+            bar[j-1].style.background="gray";
         }
-        bar[bar.length-1-i].style.background="#08605F";
-        
+        bar[bar.length-1-i].style.background="#08605F";    
     }
 }

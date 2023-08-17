@@ -21,7 +21,7 @@ function wait() {
     return new Promise(resolve => setTimeout(resolve, time));
 }
 
-function showBars(array, move) {
+function showBars(array) {
     const container = document.getElementById("container");
     container.innerHTML = "";
     const maxElement = Math.max(...array);
@@ -41,10 +41,6 @@ function showBars(array, move) {
         afterElement.classList.add("bar-after");
         afterElement.textContent = i;
         bar.appendChild(afterElement);
-
-        if (move && move.indices.includes(i)) {
-            bar.style.backgroundColor = move.type == "swap" ? "#960200" : "#C5AF1B";
-        }
         container.appendChild(bar);
     }
 }

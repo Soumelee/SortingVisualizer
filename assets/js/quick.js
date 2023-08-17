@@ -28,12 +28,16 @@ async function partition(bar, barBefore, l, r) {
         bar[j].style.background = "yellow";  
         await wait();
 
-        if (parseInt(bar[j].style.height) < parseInt(bar[r].style.height)) {
+        if (parseInt(barBefore[j].textContent) < parseInt(barBefore[r].textContent)) {
             i++;
             //swap
             let temp = bar[i].style.height;
-            bar[i].style.height = bar[j].style.height;      barBefore[i].textContent=parseFloat(bar[i].style.height);
-            bar[j].style.height = temp;     barBefore[j].textContent=parseFloat(bar[j].style.height);
+            bar[i].style.height = bar[j].style.height;      
+            bar[j].style.height = temp;     
+            
+            let tempBefore = barBefore[i].textContent;
+            barBefore[i].textContent = barBefore[j].textContent;      
+            barBefore[j].textContent = tempBefore;     
 
             bar[i].style.background = "orange";//less than pivot orange
             if (i != j) bar[j].style.background = "orange";
@@ -48,8 +52,12 @@ async function partition(bar, barBefore, l, r) {
     await wait();
     //swap pivot to correct position
     let temp = bar[i].style.height;
-    bar[i].style.height = bar[r].style.height;      barBefore[i].textContent=parseFloat(bar[i].style.height);
-    bar[r].style.height = temp;     barBefore[r].textContent=parseFloat(bar[r].style.height);
+    bar[i].style.height = bar[r].style.height;      
+    bar[r].style.height = temp;     
+    
+    let tempBefore = barBefore[i].textContent;
+    barBefore[i].textContent = barBefore[r].textContent;      
+    barBefore[r].textContent = tempBefore;     
 
     bar[r].style.background = "pink";
     bar[i].style.background = "#08605f";
@@ -58,7 +66,7 @@ async function partition(bar, barBefore, l, r) {
 
     for (let k = 0; k < bar.length; k++) {
         if (!bar[k].style.background === "#08605f"){
-            bar[k].style.background = "black";
+            bar[k].style.background = "gray";
         }
     }
     return i;

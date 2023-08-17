@@ -33,6 +33,7 @@ body{
     height: 50%;
     display: flex;
     align-items: flex-end;
+    border-bottom: 2px solid;
 }
 .buttons{
     display: flex;
@@ -53,12 +54,13 @@ button:hover{
 .bar{
     width: 20px;
     margin: 0 5px;
-    background: black;
+    background: gray;
     position: relative;
 }
 .bar-before{
     position: absolute;
-    color: white;
+    color: black;
+    font-weight: bold;
     text-align: center;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
@@ -68,6 +70,7 @@ button:hover{
     position: absolute;
     top: 100%;
     width: 100%;
-    text-align: center;    
+    text-align: center;  
+    margin-top: 5px;  
 }
 
