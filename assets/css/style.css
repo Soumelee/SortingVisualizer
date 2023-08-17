@@ -46,7 +46,7 @@ button{
 button:hover{
     cursor: pointer;
 }
-#init{
+.custom button{
     color: white;
     background-color: black;
 }

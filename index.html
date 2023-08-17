@@ -9,9 +9,18 @@
 <body>
     <h1>Algorithm Visualizer</h1>
     <h2>Sorting...</h2>
+    <div class="custom text">
+        <label for="len">Enter length of array (5 to 40):</label>
+        <input type="number" name="len" id="len" max="40" min="5" value="10">
+        <button id="init" class="btn" onclick="custom()">Generate New</button>
+        <br>
+        <label for="customArray">Enter custom array values (comma-separated, 1 to 99):</label>
+        <input type="text" id="customArray" placeholder="e.g. 5, 3, 8, 2">
+        <button  class="btn" onclick="custom()">Create custom array</button>
+
+    </div>
     <div class="container text" id="container"></div>
     <div class="buttons">
-        <button id="init" class="btn text" onclick="init()">Generate New</button>
         <button id="bubble" class="btn text" onclick="bubbleSort()">Bubble Sort</button>
         <button id="insertion" class="btn text" onclick="insertionSort()">Insertion Sort</button>
         <button id="selection" class="btn text" onclick="selectionSort()">Selection Sort</button>
