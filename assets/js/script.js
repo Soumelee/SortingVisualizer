@@ -1,21 +1,5 @@
-custom();
-function init(n) {
-    const customArrayInput = document.getElementById("customArray");
-    const customArrayStr = customArrayInput.value.trim();
-    if (customArrayStr === "") {
-        const array = [];
-        for (let i = 0; i < n; i++) {
-            array[i] = Math.random() * (1.0 - 0.1) + 0.1;
-            array[i]= Math.floor(array[i] * 100)
-        }
-        showBars(array);
-    }
-    else {
-        const array = customArrayStr.split(",").map(item => parseInt(item.trim(), 10));
-        showBars(array);
-    }
+customSize();
 
-}
 const time=200;
 function wait() {
     return new Promise(resolve => setTimeout(resolve, time));
@@ -46,12 +30,35 @@ function showBars(array) {
 }
 function customSize() {
     document.getElementById("customArray").value="";
-    custom();
-}
-function custom() {
     const lenInput = document.getElementById("len");
     const numberOfBars = parseInt(lenInput.value, 10);
-    init(numberOfBars);
+    if(numberOfBars==1){
+        alert("An array of length =1 is sorted in itself! Enter value > 1 to visualize the sorting process :)");
+        return;
+    }
+    if(numberOfBars==0 || lenInput.value==""){
+        alert("🤦‍♀️ That is an empty array! Enter value > 1")
+        return;
+    }
+    const array = [];
+        for (let i = 0; i < numberOfBars; i++) {
+            array[i] = Math.random() * (1.0 - 0.1) + 0.1;
+            array[i]= Math.floor(array[i] * 100)
+        }
+    showBars(array);
 }
-
+function customArray(){
+    const customArrayInput = document.getElementById("customArray");
+    if(customArrayInput.value===""){
+        alert("🧐 No custom array values given");
+        return;
+    }
+    const customArrayStr = customArrayInput.value.trim();
+    const array = customArrayStr.split(",").map(item => parseInt(item.trim(), 10));
+    if(array.length==1){
+        alert("One value is sorted in itself! Enter multiple values to visualize the sorting process :)");
+        return;
+    }
+    showBars(array);
+}
 
