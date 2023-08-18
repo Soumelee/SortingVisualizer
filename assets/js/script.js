@@ -1,9 +1,26 @@
 customSize();
 
-const time=200;
+// function wait() {
+//     let slider = document.getElementById('slider');
+//     const sliderValueDisplay = document.getElementById('sliderValue');
+//     const time=parseInt(slider.value);
+//     slider.addEventListener('input', () => {
+//         sliderValueDisplay.textContent = slider.value;
+//         time = parseInt(slider.value);
+//     });
+//     return new Promise(resolve => setTimeout(resolve, time));
+// }
+const slider = document.getElementById('slider');
+const sliderValueDisplay = document.getElementById('sliderValue');
+let animationDelay = parseInt(slider.value);
+slider.addEventListener('input', () => {
+    sliderValueDisplay.textContent = slider.value;
+    animationDelay = parseInt(slider.value);
+});
 function wait() {
-    return new Promise(resolve => setTimeout(resolve, time));
+    return new Promise(resolve => setTimeout(resolve, animationDelay));
 }
+
 
 function showBars(array) {
     const container = document.getElementById("container");
