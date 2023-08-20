@@ -1,15 +1,17 @@
 async function mergeSort(){
+    const pause=document.querySelector(".pause");
+    pause.style.visibility = "visible";
+
     console.log("Merge sort");
-    
     const bar = document.querySelectorAll(".bar");
     const barBefore=document.querySelectorAll(".bar-before");
 
     let l = 0, r = bar.length - 1;
-    mergeSortFun(bar, barBefore, l, r);
+    await mergeSortFun(bar, barBefore, l, r);    
+    pause.style.visibility = "hidden";
 }
 
 async function mergeSortFun(bar, barBefore, l, r) {
-    
     if (l >= r) {
         return;
     }

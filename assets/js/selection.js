@@ -1,4 +1,7 @@
 async function selectionSort(){
+    const pause=document.querySelector(".pause");
+    pause.style.visibility = "visible";
+    
     console.log("Selection sort");
     const bar=document.querySelectorAll(".bar");
     const barBefore=document.querySelectorAll(".bar-before");
@@ -35,4 +38,5 @@ async function selectionSort(){
         bar[minValue].style.background="gray";
         bar[i].style.background="#08605F";
     }
+    pause.style.visibility = "hidden";
 }

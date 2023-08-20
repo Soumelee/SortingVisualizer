@@ -35,6 +35,9 @@ body{
     align-items: flex-end;
     border-bottom: 2px solid;
 }
+.pause{
+    visibility: hidden;
+}
 .buttons{
     display: flex;
     gap: 2%;

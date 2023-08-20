@@ -1,10 +1,14 @@
 //#08605f is green color for final sorted element or bar
 async function quickSort() {
+    const pause=document.querySelector(".pause");
+    pause.style.visibility = "visible";
+
     console.log("Quick sort");
     const bar = document.querySelectorAll(".bar");
     const barBefore=document.querySelectorAll(".bar-before");
     let l = 0, r = bar.length - 1;
     await quickSortfun(bar, barBefore, l, r);
+    pause.style.visibility = "hidden";
 }
 async function quickSortfun(bar, barBefore, l, r) {
 

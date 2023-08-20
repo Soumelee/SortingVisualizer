@@ -21,6 +21,9 @@ function wait() {
     return new Promise(resolve => setTimeout(resolve, animationDelay));
 }
 
+function togglePlayPause(){
+    alert('Press OK to resume.');
+}
 
 function showBars(array) {
     const container = document.getElementById("container");
