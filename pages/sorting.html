@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm Visualizer</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <h1>Sorting</h1>
+    <div class="custom text">
+        <div>
+            <label for="len">Enter length of array (5 to 40):</label>
+            <input type="number" name="len" id="len" max="40" min="5" value="10">
+            <button id="init" class="" onclick="customSize()">Generate random</button>
+        </div>
+        <div>
+            <label for="customArray">Enter custom array values (comma-separated):</label>
+            <input type="text" id="customArray" placeholder="e.g. 15, 13, 18, 22">
+            <button class="" onclick="customArray()">Create custom array</button>    
+        </div>
+        <div>
+            <label for="slider">Select animation delay:</label>
+            <input type="range" id="slider" name="slider" min="0" max="1000" step="100" value="200">
+            Delay: <span id="sliderValue">200</span>
+        </div>
+        <div class="pause">
+            <label>Pause animation:</label>
+            <button id="playPauseButton" onclick="togglePlayPause()">Pause</button>
+        </div>
+    </div>
+    <div class="container text" id="container"></div>
+    <div class="buttons">
+        <button id="bubble" class="btn text" onclick="bubbleSort()">Bubble Sort</button>
+        <button id="insertion" class="btn text" onclick="insertionSort()">Insertion Sort</button>
+        <button id="selection" class="btn text" onclick="selectionSort()">Selection Sort</button>
+        <button id="merge" class="btn text" onclick="mergeSort()">Merge Sort</button>
+        <button id="quick" class="btn text" onclick="quickSort()">Quick Sort</button>
+        
+        <!-- 
+        <button id="heap" class="btn text">Heap Sort</button> -->
+    </div>
+
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/bubble.js"></script>
+    <script src="../assets/js/selection.js"></script>
+    <script src="../assets/js/merge.js"></script>
+    <script src="../assets/js/quick.js"></script>
+    <script src="../assets/js/insertion.js"></script>
+    <!--    
+    <script src="heap.js"></script> -->
+</body>
+</html>
