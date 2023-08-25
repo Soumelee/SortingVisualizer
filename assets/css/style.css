@@ -17,9 +17,6 @@ h2{
 .text{
     font-family: 'Proza Libre', sans-serif;
 }
-html{
-    height: 100%;
-}
 body{
     display: flex;
     flex-direction: column;
@@ -30,10 +27,12 @@ body{
     width: 100%;
 }
 .container{
-    height: 50%;
+    height: 330px;
     display: flex;
     align-items: flex-end;
+    justify-content: center;
     border-bottom: 2px solid;
+    margin-bottom: 50px;
 }
 .pause{
     visibility: hidden;

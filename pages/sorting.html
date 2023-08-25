@@ -5,41 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Algorithm Visualizer</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .explain{
+            margin: 0 100px 50px;
+        }
+        .animate{
+            display: flex;
+            margin: 0 100px 10px;
+            height: 550px;
+            gap: 20px;
+        }
+        .animate-2{
+            /* text-align: right; */
+            overflow-y: scroll;
+        }
+    </style>
 </head>
 <body>
     <h1>Sorting</h1>
-    <div class="custom text">
-        <div>
-            <label for="len">Enter length of array (5 to 40):</label>
-            <input type="number" name="len" id="len" max="40" min="5" value="10">
-            <button id="init" class="" onclick="customSize()">Generate random</button>
-        </div>
-        <div>
-            <label for="customArray">Enter custom array values (comma-separated):</label>
-            <input type="text" id="customArray" placeholder="e.g. 15, 13, 18, 22">
-            <button class="" onclick="customArray()">Create custom array</button>    
-        </div>
-        <div>
-            <label for="slider">Select animation delay:</label>
-            <input type="range" id="slider" name="slider" min="0" max="1000" step="100" value="200">
-            Delay: <span id="sliderValue">200</span>
-        </div>
-        <div class="pause">
-            <label>Pause animation:</label>
-            <button id="playPauseButton" onclick="togglePlayPause()">Pause</button>
-        </div>
+    <div class="explain text">
+        <p>
+            <b>Introduction to Sorting Algorithms</b><br>
+            Sorting is a fundamental concept in the field of computer science, with applications spanning from database management to search algorithms. At its core, sorting involves arranging a collection of items in a specific order, often numerically or alphabetically. Imagine a library where books are meticulously organized by author name or a deck of playing cards sorted by rank and suit. Just as in these everyday scenarios, computers too need efficient ways to sort data quickly and accurately.
+            <br>
+            In the world of programming, sorting algorithms play a vital role in optimizing how data is organized and accessed. Different sorting algorithms utilize various strategies to rearrange data elements, each with its unique set of advantages and disadvantages. We aim to demystify these sorting algorithms and make them accessible to students and enthusiasts through visualization and explanation.
+        </p>
+        <p>
+            <b>Why Sorting Matters</b><br>
+            Sorting might seem like a straightforward task, but as datasets grow larger, the efficiency of the sorting process becomes paramount. Consider an online store with thousands of products or a search engine sifting through millions of web pages. In these cases, efficient sorting algorithms can drastically reduce the time it takes to find relevant information.
+            <br>
+            Moreover, sorting algorithms are essential building blocks for more complex algorithms and data structures. They serve as the foundation for tasks like binary search, which relies on a sorted dataset to quickly locate a specific element.
+        </p>
+        <p>
+            <b>The visualization</b><br>
+            We'll use dynamic animations to illustrate the step-by-step process of how these algorithms work. By watching the animations and reading the accompanying explanations, you'll gain a deep understanding of the inner workings of each sorting algorithm.
+            <br><br><hr>
+        </p>
     </div>
-    <div class="container text" id="container"></div>
-    <div class="buttons">
-        <button id="bubble" class="btn text" onclick="bubbleSort()">Bubble Sort</button>
-        <button id="insertion" class="btn text" onclick="insertionSort()">Insertion Sort</button>
-        <button id="selection" class="btn text" onclick="selectionSort()">Selection Sort</button>
-        <button id="merge" class="btn text" onclick="mergeSort()">Merge Sort</button>
-        <button id="quick" class="btn text" onclick="quickSort()">Quick Sort</button>
+    <div class="animate">
+        <div class="animate-1">
+            <div class="custom text">
+                <div>
+                    <label for="len">Enter length of array (5 to 25):</label>
+                    <input type="number" name="len" id="len" max="25" min="5" value="10">
+                    <button id="init" class="" onclick="customSize()">Generate random</button>
+                </div>
+                <div>
+                    <label for="customArray">Enter custom array values (comma-separated):</label>
+                    <input type="text" id="customArray" placeholder="e.g. 15, 13, 18, 22">
+                    <button class="" onclick="customArray()">Create custom array</button>    
+                </div>
+                <div>
+                    <label for="slider">Select animation delay:</label>
+                    <input type="range" id="slider" name="slider" min="0" max="1000" step="100" value="200">
+                    Delay: <span id="sliderValue">200</span>
+                </div>
+                <div class="pause">
+                    <label>Pause animation:</label>
+                    <button id="playPauseButton" onclick="togglePlayPause()">Pause</button>
+                </div>
+            </div>
+            <div class="container text" id="container"></div>
+            <div class="buttons">
+                <button id="bubble" class="btn text" onclick="bubbleSort()">Bubble Sort</button>
+                <button id="insertion" class="btn text" onclick="insertionSort()">Insertion Sort</button>
+                <button id="selection" class="btn text" onclick="selectionSort()">Selection Sort</button>
+                <button id="merge" class="btn text" onclick="mergeSort()">Merge Sort</button>
+                <button id="quick" class="btn text" onclick="quickSort()">Quick Sort</button>
+            </div>
+        </div>
         
-        <!-- 
-        <button id="heap" class="btn text">Heap Sort</button> -->
+        <div class="animate-2 text">
+            <h3>Algorithm Explanations</h3>
+            <h4>Bubble Sort</h4>
+            <p>Bubble Sort is one of the simplest sorting algorithms. It works by repeatedly stepping through the list, comparing adjacent elements, and swapping them if they are in the wrong order. The pass-throughs continue until no more swaps are needed, indicating that the list is sorted. While Bubble Sort is straightforward, its efficiency is limited, especially for larger datasets.</p>
+            <h4>Pseudocode</h4>
+<pre>
+function bubbleSort(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 1; j < arr.length - i; j++) {
+            if (arr[j - 1] > arr[j]) {
+                swap(arr, j, j - 1);
+            }
+        }
+    }
+}
+</pre>
+        <h4>Time Complexity Analysis</h4>
+        <p>Best Case: O(n) <br>
+            Worst Case: O(n^2)<br>
+            Average Case: O(n^2)<br></p>
+        </div>
     </div>
+    
 
     <script src="../assets/js/script.js"></script>
     <script src="../assets/js/bubble.js"></script>
