@@ -28,24 +28,40 @@ function togglePlayPause(){
 function showBars(array) {
     const container = document.getElementById("container");
     container.innerHTML = "";
-    const maxElement = Math.max(...array);
+    const maxElement = Math.max(...array);  
+
+    const relativeWidth=(container.clientWidth)/(array.length);
+    const marginWidth = relativeWidth / 4;
+    // console.log(relativeWidth,marginWidth);
 
     for (let i = 0; i < array.length; i++) {
         const bar = document.createElement("div");   
         const relativeHeight = (array[i] / maxElement) * 100;     
         bar.style.height = relativeHeight + "%";
-        bar.classList.add("bar");
+        bar.classList.add("bar");        
+        
+        bar.style.width="20px";
+        bar.style.marginLeft=bar.style.marginRight="5px";
+       
 
         const beforeElement = document.createElement("div"); 
         beforeElement.classList.add("bar-before");
         beforeElement.textContent = array[i];
         bar.appendChild(beforeElement);
-
+        
         const afterElement = document.createElement("div"); 
         afterElement.classList.add("bar-after");
         afterElement.textContent = i;
-        bar.appendChild(afterElement);
-        container.appendChild(bar);
+        bar.appendChild(afterElement);       
+        container.appendChild(bar);     
+        
+        if(array.length>25){
+            bar.style.width=relativeWidth+ "%";            
+            bar.style.marginLeft=marginWidth+ "px";
+            bar.style.marginRight="0px";
+            beforeElement.style.display="none";
+            afterElement.style.display="none";
+        }
     }
 }
 function customSize() {

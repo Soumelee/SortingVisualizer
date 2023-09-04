@@ -33,6 +33,7 @@ body{
     justify-content: center;
     border-bottom: 2px solid;
     margin-bottom: 50px;
+    width: 100%;
 }
 .pause{
     visibility: hidden;
@@ -54,8 +55,10 @@ button:hover{
     background-color: black;
 }
 .bar{
-    width: 20px;
-    margin: 0 5px;
+    /* width: 20px; */
+    /* margin: 0 5px; */
+    margin-top: 0;
+    margin-bottom: 0;
     background: gray;
     position: relative;
 }
