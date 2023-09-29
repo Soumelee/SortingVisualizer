@@ -7,55 +7,44 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
         .topics{
-            display: flex;
-            flex-wrap: wrap;
+            display: flex;            
             justify-content:center;
-            gap: 10px;
-            margin: 30px 0 0 0;
-        }
-        .topics>div{
-            height: 170px;
-            width: 170px;
-            background: gray;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-        }
+            margin: 30px 0;
+        }  
+        .topics a{
+            text-decoration: none;
+        }      
         body{
-            padding: 0 150px;            
+            padding: 0 150px;              
+            gap: 1rem;
         }
     </style>
 </head>
 <body>
-    <h1>Algorithm Visualizer</h1>
+    <h1>Sorting Visualizer</h1>
     <main class="text">
         <p>
-            Welcome to Algorithm Visualizer! 
-            Explore the fascinating world of algorithms through interactive visualizations 
-            that bring complex concepts to life. Whether you're a student, an enthusiast, 
+           <b>Welcome to Sorting Visualizer!</b>  <br>
+            Whether you're a student, an enthusiast, 
             or simply curious about the inner workings of algorithms, 
             you've come to the right place.
         </p>
-        <p>
-            Select an algorithm category below to begin your exploration. 
+        <p>            
             Whether you're seeking a comprehensive understanding or a quick overview, 
             these visualizations cater to different learning styles.            
-            Happy exploring and enjoy your journey into the world of algorithms!
+            Happy exploring!
         </p>
         <div class="topics">
-            <div class="sorting"><a href="pages/sorting.html"><h2>Sorting</h2></a></div>
-            <div class="coming-soon"><a><h2>coming soon</h2></a></div>
-            <div class="coming-soon"><a><h2>coming soon</h2></a></div>
-            <div class="coming-soon"><a><h2>coming soon</h2></a></div>
-            <div class="coming-soon"><a><h2>coming soon</h2></a></div>
-            <div class="coming-soon"><a><h2>coming soon</h2></a></div>
-            <div class="coming-soon"><a><h2>coming soon</h2></a></div>
-            <div class="coming-soon"><a><h2>coming soon</h2></a></div>
-            <div class="coming-soon"><a><h2>coming soon</h2></a></div>
-            
-            
+            <div class="sorting"><a href="pages/sorting.html">Visualize</a></div>    
         </div>
+        <p>
+            <b>Why Sorting Matters</b><br>
+            Sorting is a fundamental concept in the field of computer science, with applications spanning from database management to search algorithms. At its core, sorting involves arranging a collection of items in a specific order, often numerically or alphabetically. Imagine a library where books are meticulously organized by author name or a deck of playing cards sorted by rank and suit. Just as in these everyday scenarios, computers too need efficient ways to sort data quickly and accurately.</p>
+        <p>            
+            Sorting might seem like a straightforward task, but as datasets grow larger, the efficiency of the sorting process becomes paramount. Consider an online store with thousands of products or a search engine sifting through millions of web pages. In these cases, efficient sorting algorithms can drastically reduce the time it takes to find relevant information.
+            <br>
+            Moreover, sorting algorithms are essential building blocks for more complex algorithms and data structures. They serve as the foundation for tasks like binary search, which relies on a sorted dataset to quickly locate a specific element.
+        </p>
     </main>
 </body>
 </html>
