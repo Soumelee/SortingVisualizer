@@ -4,6 +4,8 @@ async function insertionSort(){
     const pause=document.querySelector(".pause");
     pause.style.visibility = "visible";
 
+    disableButtons();
+
     const bar=document.querySelectorAll(".bar");
     const barBefore=document.querySelectorAll(".bar-before");
     let key, keyBefore;
@@ -40,4 +42,6 @@ async function insertionSort(){
         bar[i].style.background="#08605F";
     }
     pause.style.visibility = "hidden";
+
+    enableButtons();
 }

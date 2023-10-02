@@ -3,12 +3,16 @@ async function quickSort() {
     const pause=document.querySelector(".pause");
     pause.style.visibility = "visible";
 
+    disableButtons();
+
     console.log("Quick sort");
     const bar = document.querySelectorAll(".bar");
     const barBefore=document.querySelectorAll(".bar-before");
     let l = 0, r = bar.length - 1;
     await quickSortfun(bar, barBefore, l, r);
     pause.style.visibility = "hidden";
+
+    enableButtons();
 }
 async function quickSortfun(bar, barBefore, l, r) {
 

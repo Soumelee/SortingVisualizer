@@ -65,6 +65,10 @@ function showBars(array) {
     }
 }
 function customSize() {
+    document.querySelector(".pause").style.visibility = "hidden";
+    enableButtons();
+
+
     document.getElementById("customArray").value="";
     const lenInput = document.getElementById("len");
     const numberOfBars = parseInt(lenInput.value, 10);
@@ -84,6 +88,9 @@ function customSize() {
     showBars(array);
 }
 function customArray(){
+    document.querySelector(".pause").style.visibility = "hidden";
+    enableButtons();
+    
     const customArrayInput = document.getElementById("customArray");
     if(customArrayInput.value===""){
         alert("🧐 No custom array values given");
@@ -98,3 +105,17 @@ function customArray(){
     showBars(array);
 }
 
+function disableButtons(){
+    document.querySelector("#bubble").style.pointerEvents = "none";
+    document.querySelector("#insertion").style.pointerEvents = "none";
+    document.querySelector("#selection").style.pointerEvents = "none";
+    document.querySelector("#merge").style.pointerEvents = "none";
+    document.querySelector("#quick").style.pointerEvents = "none";
+}
+function enableButtons(){
+    document.querySelector("#bubble").style.pointerEvents = "auto";
+    document.querySelector("#insertion").style.pointerEvents = "auto";
+    document.querySelector("#selection").style.pointerEvents = "auto";
+    document.querySelector("#merge").style.pointerEvents = "auto";
+    document.querySelector("#quick").style.pointerEvents = "auto";
+}

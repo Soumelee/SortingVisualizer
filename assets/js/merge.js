@@ -2,6 +2,8 @@ async function mergeSort(){
     const pause=document.querySelector(".pause");
     pause.style.visibility = "visible";
 
+    disableButtons();
+
     console.log("Merge sort");
     const bar = document.querySelectorAll(".bar");
     const barBefore=document.querySelectorAll(".bar-before");
@@ -9,6 +11,8 @@ async function mergeSort(){
     let l = 0, r = bar.length - 1;
     await mergeSortFun(bar, barBefore, l, r);    
     pause.style.visibility = "hidden";
+
+    enableButtons();
 }
 
 async function mergeSortFun(bar, barBefore, l, r) {

@@ -4,6 +4,8 @@ async function bubbleSort(){
     const pause=document.querySelector(".pause");
     pause.style.visibility = "visible";
 
+    disableButtons();
+
     const bar=document.querySelectorAll(".bar");
     const barBefore=document.querySelectorAll(".bar-before");
     for (let i = 0; i < bar.length; i++) {
@@ -29,5 +31,7 @@ async function bubbleSort(){
         }
         bar[bar.length-1-i].style.background="#08605F";    
     }
-    pause.style.visibility = "hidden";
+    pause.style.visibility = "hidden";    
+
+    enableButtons();
 }
