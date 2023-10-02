@@ -9,6 +9,9 @@
       html {
         padding-bottom: 4rem;
       }
+      main .buttons {
+        display: none;
+      }
       /* .animate {
         display: flex;
         margin: 0 100px 10px;
@@ -51,20 +54,33 @@
         }   
       }
       @media screen and (max-width: 880px) {        
-        nav{
+        /* nav{
           flex-direction: column;
-        }   
+        }    */
+        nav .buttons{
+          display: none;
+        }
+        main .buttons{
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;   
+          margin-top: -3rem;       
+        }
+        main .buttons button{
+          margin-bottom: 1em;
+        }
         .bar-before, .bar-after{
           font-size: 0.8rem;
         }
+        
       }
       @media screen and (max-width: 640px){
-        nav .buttons{
+        /* nav .buttons{
           flex-wrap: wrap;
-        }
-        nav .buttons button{
+        } */
+        /* nav .buttons button{
           margin-bottom: 1em;
-        }
+        } */
         body{
           font-size: 0.8rem;
         }
@@ -148,8 +164,8 @@
                 max="1000"
                 step="100"
                 value="200"
-              />
-              Delay: <span id="sliderValue">200</span>
+              />              
+              <span style="white-space: nowrap;">Delay: <span id="sliderValue">200</span></span>
             </div>
             <div class="pause">
               <label>Pause animation:</label>
@@ -158,7 +174,23 @@
               </button>
             </div>
         </div>
-
+        <div class="buttons">
+          <button id="bubble" class="btn text" onclick="bubbleSort()">
+            Bubble Sort
+          </button>
+          <button id="insertion" class="btn text" onclick="insertionSort()">
+            Insertion Sort
+          </button>
+          <button id="selection" class="btn text" onclick="selectionSort()">
+            Selection Sort
+          </button>
+          <button id="merge" class="btn text" onclick="mergeSort()">
+            Merge Sort
+          </button>
+          <button id="quick" class="btn text" onclick="quickSort()">
+            Quick Sort
+          </button>
+      </div>
         <div class="container text" id="container"></div>
     </main>  
        
