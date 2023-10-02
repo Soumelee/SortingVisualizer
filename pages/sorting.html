@@ -25,6 +25,7 @@
         justify-content: space-between;        
         align-items: center;
         padding: 1rem; 
+        gap: 1rem;
       }
       nav .buttons button{
         width: 120px;        
@@ -32,11 +33,59 @@
       main{
         display: flex;
         justify-content: space-between;  
-        padding: 1rem;     
+        padding: 1rem;   
+        gap: 1rem;  
       }   
       main .custom{
         line-height: 3rem;
       } 
+      @media screen and (max-width: 1075px) {        
+        h1{
+          font-size: 3rem;
+        }
+        main{
+          flex-direction: column;
+        }    
+        main .container{
+          justify-content: center;
+        }   
+      }
+      @media screen and (max-width: 880px) {        
+        nav{
+          flex-direction: column;
+        }   
+        .bar-before, .bar-after{
+          font-size: 0.8rem;
+        }
+      }
+      @media screen and (max-width: 640px){
+        nav .buttons{
+          flex-wrap: wrap;
+        }
+        nav .buttons button{
+          margin-bottom: 1em;
+        }
+        body{
+          font-size: 0.8rem;
+        }
+        .bar-before, .bar-after{
+          font-size: 0.6rem;
+        }
+        .bar{
+          margin-right: 0 !important;
+        }
+      }
+      @media screen and (max-width: 435px){
+        h1{
+            font-size: 1.5rem;
+        }
+        body{
+          font-size: 0.8rem;
+        }
+        button{
+          font-size: inherit;
+        }        
+      }      
     </style>
   </head>
   <body>
@@ -63,7 +112,7 @@
     <main>
         <div class="custom">
             <div>
-              <label for="len">Enter length of array (5 to 25):</label>
+              <label for="len"># Enter length of array (5 to 25):</label>
               <input
                 type="number"
                 name="len"
@@ -78,7 +127,7 @@
             </div>
             <div>
               <label for="customArray"
-                >Enter custom array values (comma-separated):</label
+                ># Enter custom array values (comma-separated):</label
               >
               <input
                 type="text"
@@ -90,7 +139,7 @@
               </button>
             </div>
             <div>
-              <label for="slider">Select animation delay:</label>
+              <label for="slider"># Select animation delay:</label>
               <input
                 type="range"
                 id="slider"
