@@ -111,6 +111,12 @@ function disableButtons(){
     document.querySelector("#selection").style.pointerEvents = "none";
     document.querySelector("#merge").style.pointerEvents = "none";
     document.querySelector("#quick").style.pointerEvents = "none";
+
+    document.querySelector("#bubble1").style.pointerEvents = "none";
+    document.querySelector("#insertion1").style.pointerEvents = "none";
+    document.querySelector("#selection1").style.pointerEvents = "none";
+    document.querySelector("#merge1").style.pointerEvents = "none";
+    document.querySelector("#quick1").style.pointerEvents = "none";
 }
 function enableButtons(){
     document.querySelector("#bubble").style.pointerEvents = "auto";
@@ -118,4 +124,10 @@ function enableButtons(){
     document.querySelector("#selection").style.pointerEvents = "auto";
     document.querySelector("#merge").style.pointerEvents = "auto";
     document.querySelector("#quick").style.pointerEvents = "auto";
+
+    document.querySelector("#bubble1").style.pointerEvents = "auto";
+    document.querySelector("#insertion1").style.pointerEvents = "auto";
+    document.querySelector("#selection1").style.pointerEvents = "auto";
+    document.querySelector("#merge1").style.pointerEvents = "auto";
+    document.querySelector("#quick1").style.pointerEvents = "auto";
 }
