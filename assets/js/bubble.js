@@ -2,6 +2,7 @@ async function bubbleSort(){
     console.log("Bubble sort");
 
     let info = document.getElementById("info");
+    info.innerHTML = "";
     let pseudocode=document.createElement('pre');
     pseudocode.innerHTML = `
     function bubbleSort(arr) {
@@ -12,7 +13,8 @@ async function bubbleSort(){
                 }
             }
         }
-    }`
+    }
+    `
     info.appendChild(pseudocode);
     
     
@@ -58,8 +60,11 @@ async function bubbleSort(){
         bar[bar.length-1-i].style.background="#08605F";    
     }
     pause.style.visibility = "hidden";    
-    bar[1].removeChild(jtag);
-    bar[0].removeChild(jminus1tag);
+    // bar[1].removeChild(jtag);
+    // bar[0].removeChild(jminus1tag);
+    jtag.remove();
+    jminus1tag.remove();
+    // info.innerHTML = "";
     
     
     enableButtons();

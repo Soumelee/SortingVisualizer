@@ -5,6 +5,23 @@ async function selectionSort(){
     disableButtons();
     
     console.log("Selection sort");
+    let info = document.getElementById("info");
+    info.innerHTML = "";
+    let pseudocode=document.createElement('pre');
+    pseudocode.innerHTML = `
+    function selectionSort(arr) {
+        for (let i = 0; i < arr.length - 1; i++) {
+            let min = i;    
+            for (let j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[minIndex]) 
+                    min = j;                
+            }    
+            if (min !== i) 
+                swap(arr, i, min);
+        }
+    }
+    `
+    info.appendChild(pseudocode);
     const bar=document.querySelectorAll(".bar");
     const barBefore=document.querySelectorAll(".bar-before");
 
@@ -18,6 +35,7 @@ async function selectionSort(){
     itag.innerHTML = "i";
     jtag.innerHTML = "j";
     smalltag.innerHTML= "min";
+    let smalltagTracker=-1;
 
     for (let i = 0; i < bar.length; i++) {
         let minValue=i;
@@ -36,9 +54,12 @@ async function selectionSort(){
                     bar[minValue].removeChild(smalltag);
                 }
                 
+                
                 minValue=j;
-                bar[minValue].style.background="#A62639";//new min red bar
+                bar[minValue].style.background="#A62639";//new min red bar                
                 bar[minValue].appendChild(smalltag);
+                smalltagTracker=j;
+                await wait();
             }
             else{
                 bar[j].style.background="gray";
@@ -56,10 +77,19 @@ async function selectionSort(){
 
         bar[minValue].style.background="gray";
         bar[i].style.background="#08605F";
+        
+        // if(smalltag.parentNode===bar[smalltagTracker]){
+        //     bar[smalltagTracker].removeChild(smalltag); 
+        // }  
+        smalltag.remove();      
     }
-    bar[bar.length-1].removeChild(itag);
-    bar[bar.length-1].removeChild(jtag);
-    bar[bar.length-1].removeChild(smalltag);
+    // bar[bar.length-1].removeChild(itag);
+    // bar[bar.length-1].removeChild(jtag);
+    itag.remove();
+    jtag.remove();
+    
+    // bar[smalltagTracker].removeChild(smalltag);
+    // info.innerHTML = "";
 
     pause.style.visibility = "hidden";
 
