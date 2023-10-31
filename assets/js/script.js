@@ -105,29 +105,31 @@ function customArray(){
     showBars(array);
 }
 
-function disableButtons(){
-    document.querySelector("#bubble").style.pointerEvents = "none";
-    document.querySelector("#insertion").style.pointerEvents = "none";
-    document.querySelector("#selection").style.pointerEvents = "none";
-    document.querySelector("#merge").style.pointerEvents = "none";
-    document.querySelector("#quick").style.pointerEvents = "none";
-
-    document.querySelector("#bubble1").style.pointerEvents = "none";
-    document.querySelector("#insertion1").style.pointerEvents = "none";
-    document.querySelector("#selection1").style.pointerEvents = "none";
-    document.querySelector("#merge1").style.pointerEvents = "none";
-    document.querySelector("#quick1").style.pointerEvents = "none";
-}
 function enableButtons(){
-    document.querySelector("#bubble").style.pointerEvents = "auto";
-    document.querySelector("#insertion").style.pointerEvents = "auto";
-    document.querySelector("#selection").style.pointerEvents = "auto";
-    document.querySelector("#merge").style.pointerEvents = "auto";
-    document.querySelector("#quick").style.pointerEvents = "auto";
+    let buttons = document.querySelectorAll("button[id$='bubble'], button[id$='insertion'], button[id$='selection'], button[id$='merge'], button[id$='quick']");
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = false;
+        buttons[i].style.cursor = "pointer";
 
-    document.querySelector("#bubble1").style.pointerEvents = "auto";
-    document.querySelector("#insertion1").style.pointerEvents = "auto";
-    document.querySelector("#selection1").style.pointerEvents = "auto";
-    document.querySelector("#merge1").style.pointerEvents = "auto";
-    document.querySelector("#quick1").style.pointerEvents = "auto";
+    }
+
+    let buttons1 = document.querySelectorAll("button[id$='bubble1'], button[id$='insertion1'], button[id$='selection1'], button[id$='merge1'], button[id$='quick1']");
+    for (let i = 0; i < buttons1.length; i++) {
+        buttons1[i].disabled = false;
+        buttons1[i].style.cursor = "pointer";
+        
+    }
+}
+function disableButtons() {
+    let buttons = document.querySelectorAll("button[id$='bubble'], button[id$='insertion'], button[id$='selection'], button[id$='merge'], button[id$='quick']");
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = true;
+        buttons[i].style.cursor = "not-allowed";
+
+    }
+
+    let buttons1 = document.querySelectorAll("button[id$='bubble1'], button[id$='insertion1'], button[id$='selection1'], button[id$='merge1'], button[id$='quick1']");
+    for (let i = 0; i < buttons1.length; i++) {
+        buttons1[i].style.cursor = "not-allowed";        
+    }
 }
