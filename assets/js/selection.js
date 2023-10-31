@@ -1,13 +1,13 @@
-async function selectionSort(){
-    const pause=document.querySelector(".pause");
+async function selectionSort() {
+    const pause = document.querySelector(".pause");
     pause.style.visibility = "visible";
 
     disableButtons();
-    
+
     console.log("Selection sort");
     let info = document.getElementById("info");
     info.innerHTML = "";
-    let pseudocode=document.createElement('pre');
+    let pseudocode = document.createElement('pre');
     pseudocode.innerHTML = `
     function selectionSort(arr) {
         for (let i = 0; i < arr.length - 1; i++) {
@@ -22,8 +22,8 @@ async function selectionSort(){
     }
     `
     info.appendChild(pseudocode);
-    const bar=document.querySelectorAll(".bar");
-    const barBefore=document.querySelectorAll(".bar-before");
+    const bar = document.querySelectorAll(".bar");
+    const barBefore = document.querySelectorAll(".bar-before");
 
     let itag, jtag, smalltag;
     itag = document.createElement("span");
@@ -34,61 +34,66 @@ async function selectionSort(){
     smalltag.setAttribute('class', 'tags');
     itag.innerHTML = "i";
     jtag.innerHTML = "j";
-    smalltag.innerHTML= "min";
-    let smalltagTracker=-1;
+    smalltag.innerHTML = "min";
+    let smalltagTracker = -1;
 
     for (let i = 0; i < bar.length; i++) {
-        let minValue=i;
-        bar[i].style.background="#9B7EDE";//i bar where swap will happen is purple
+        let minValue = i;
+        bar[i].style.background = "#9B7EDE";//i bar where swap will happen is purple
         bar[i].appendChild(itag);
-        for (let j = i+1; j < bar.length; j++) {
-            bar[j].style.background="#001F54"; //current j bar is blue
+        for (let j = i + 1; j < bar.length; j++) {
+            bar[j].style.background = "#001F54"; //current j bar is blue
             bar[j].appendChild(jtag);
-            
-            
+
+
             await wait();
 
-            if(parseInt(barBefore[j].textContent) < parseInt(barBefore[minValue].textContent)){
-                if(minValue!=i){
-                    bar[minValue].style.background="gray";//old min is black
+            if (parseInt(barBefore[j].textContent) < parseInt(barBefore[minValue].textContent)) {
+                if (minValue != i) {
+                    bar[minValue].style.background = "gray";//old min is black
                     bar[minValue].removeChild(smalltag);
                 }
-                
-                
-                minValue=j;
-                bar[minValue].style.background="#A62639";//new min red bar                
+
+
+                minValue = j;
+                bar[minValue].style.background = "#A62639";//new min red bar                
                 bar[minValue].appendChild(smalltag);
-                smalltagTracker=j;
+                smalltagTracker = j;
                 await wait();
             }
-            else{
-                bar[j].style.background="gray";
+            else {
+                bar[j].style.background = "gray";
             }
         }
-        // await wait();
-        //swap
-        let temp=bar[i].style.height;
-        bar[i].style.height=bar[minValue].style.height;     
-        bar[minValue].style.height=temp;  
 
-        let tempBefore=barBefore[i].textContent;
-        barBefore[i].textContent=barBefore[minValue].textContent;     
-        barBefore[minValue].textContent=tempBefore;   
+        if (i !== minValue) {
+            //swap glow
+            bar[i].style.boxShadow = "0px -5px 10px 5px #85B1FF";
+            bar[minValue].style.boxShadow = "0px -5px 10px 5px #85B1FF";
+            await wait();
+            //swap
+            let temp = bar[i].style.height;
+            bar[i].style.height = bar[minValue].style.height;
+            bar[minValue].style.height = temp;
 
-        bar[minValue].style.background="gray";
-        bar[i].style.background="#08605F";
-        
-        // if(smalltag.parentNode===bar[smalltagTracker]){
-        //     bar[smalltagTracker].removeChild(smalltag); 
-        // }  
-        smalltag.remove();      
+            let tempBefore = barBefore[i].textContent;
+            barBefore[i].textContent = barBefore[minValue].textContent;
+            barBefore[minValue].textContent = tempBefore;
+            await wait();
+
+            bar[i].style.boxShadow = "";
+            bar[minValue].style.boxShadow = "";
+        }
+
+        bar[minValue].style.background = "gray";
+        bar[i].style.background = "#08605F";//green
+
+        smalltag.remove();
     }
-    // bar[bar.length-1].removeChild(itag);
-    // bar[bar.length-1].removeChild(jtag);
+
     itag.remove();
     jtag.remove();
-    
-    // bar[smalltagTracker].removeChild(smalltag);
+
     // info.innerHTML = "";
 
     pause.style.visibility = "hidden";

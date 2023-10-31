@@ -93,18 +93,30 @@ async function partition(bar, barBefore, l, r) {
         if (parseInt(barBefore[j].textContent) < parseInt(barBefore[r].textContent)) {
             i++;
             bar[i].appendChild(itag);
-            //swap
-            let temp = bar[i].style.height;
-            bar[i].style.height = bar[j].style.height;
-            bar[j].style.height = temp;
 
-            let tempBefore = barBefore[i].textContent;
-            barBefore[i].textContent = barBefore[j].textContent;
-            barBefore[j].textContent = tempBefore;
+            if (i !== j) {
+                //swap glow            
+                bar[j].style.boxShadow = "0px -5px 10px 5px #92C4DD";
+                bar[i].style.boxShadow = "0px -5px 10px 5px #92C4DD";
+                await wait();
+
+                //swap
+                let temp = bar[i].style.height;
+                bar[i].style.height = bar[j].style.height;
+                bar[j].style.height = temp;
+
+                let tempBefore = barBefore[i].textContent;
+                barBefore[i].textContent = barBefore[j].textContent;
+                barBefore[j].textContent = tempBefore;
+                await wait();
+
+                bar[j].style.boxShadow = "";
+                bar[i].style.boxShadow = "";
+            }
+
 
             bar[i].style.background = "orange";//less than pivot orange
             if (i != j) bar[j].style.background = "orange";
-
             await wait();
         }
         else {
@@ -114,6 +126,12 @@ async function partition(bar, barBefore, l, r) {
     i++;
     bar[i].appendChild(i1tag);
     await wait();
+
+    //swap glow            
+    bar[r].style.boxShadow = "0px -5px 10px 5px #92C4DD";
+    bar[i].style.boxShadow = "0px -5px 10px 5px #92C4DD";
+    await wait();
+
     //swap pivot to correct position
     let temp = bar[i].style.height;
     bar[i].style.height = bar[r].style.height;
@@ -122,6 +140,9 @@ async function partition(bar, barBefore, l, r) {
     let tempBefore = barBefore[i].textContent;
     barBefore[i].textContent = barBefore[r].textContent;
     barBefore[r].textContent = tempBefore;
+    await wait();
+    bar[r].style.boxShadow = "";
+    bar[i].style.boxShadow = "";
 
     bar[r].style.background = "pink";
     bar[i].style.background = "#08605f";
