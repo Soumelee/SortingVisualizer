@@ -1,5 +1,20 @@
 async function bubbleSort(){
     console.log("Bubble sort");
+
+    let info = document.getElementById("info");
+    let pseudocode=document.createElement('pre');
+    pseudocode.innerHTML = `
+    function bubbleSort(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 1; j < arr.length - i; j++) {
+                if (arr[j - 1] > arr[j]) {
+                    swap(arr, j, j - 1);
+                }
+            }
+        }
+    }`
+    info.appendChild(pseudocode);
+    
     
     const pause=document.querySelector(".pause");
     pause.style.visibility = "visible";
@@ -8,10 +23,21 @@ async function bubbleSort(){
 
     const bar=document.querySelectorAll(".bar");
     const barBefore=document.querySelectorAll(".bar-before");
+
+    let jtag = document.createElement('span'), 
+    jminus1tag = document.createElement('span');
+    jtag.innerHTML = 'j';
+    jtag.setAttribute('class', 'tags');
+    jminus1tag.innerHTML = 'j-1';
+    jminus1tag.setAttribute('class', 'tags');
+
     for (let i = 0; i < bar.length; i++) {
         for (let j = 1; j < bar.length-i; j++) {
             bar[j].style.background="#001F54";
+            bar[j].appendChild(jtag);
+
             bar[j-1].style.background="#001F54";
+            bar[j-1].appendChild(jminus1tag);
             
             await wait();
 
@@ -32,6 +58,9 @@ async function bubbleSort(){
         bar[bar.length-1-i].style.background="#08605F";    
     }
     pause.style.visibility = "hidden";    
-
+    bar[1].removeChild(jtag);
+    bar[0].removeChild(jminus1tag);
+    
+    
     enableButtons();
 }

@@ -122,3 +122,23 @@ button:hover {
     text-align: center;
     margin-top: 5px;
 }
+.tags{
+    background-color: rgb(40, 40, 40);
+    color: yellow;
+    position: absolute;  
+    bottom: -100px;
+    letter-spacing: 2px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    width: inherit;
+    padding: 1rem 0;
+    font-family: monospace;
+    font-weight: 300;
+    font-size: large;
+}
+#info{
+    background-color: rgb(40, 40, 40);
+    color: yellow;
+    line-height: initial;
+    margin-top: 5px;
+}
