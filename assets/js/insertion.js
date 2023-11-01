@@ -38,10 +38,10 @@ async function insertionSort() {
     const bar = document.querySelectorAll(".bar");
     const barBefore = document.querySelectorAll(".bar-before");
     let key, keyBefore;
-    bar[0].style.background = "#08605F";
+    bar[0].style.background = "#0C9795";
 
     for (let i = 1; i < bar.length; i++) {
-        bar[i].style.background = "#001F54";
+        bar[i].style.background = "#1F71FF";
 
         key = (bar[i].style.height);
         keyBefore = (barBefore[i].textContent);
@@ -54,7 +54,7 @@ async function insertionSort() {
 
         while ((j >= 0) && (parseInt(barBefore[j].textContent)) > keyBefore) {
 
-            bar[j].style.background = "#001F54"; //blue
+            bar[j].style.background = "#1F71FF"; //blue
             try {
                 bar[j-1].appendChild(jtag);
             } catch (error) {
@@ -69,7 +69,7 @@ async function insertionSort() {
             await wait();
 
             for (let k = i; k >= 0; k--) {
-                bar[k].style.background = "#08605F";
+                bar[k].style.background = "#0C9795";
             }
         }
         bar[j + 1].appendChild(jplus1tag);
@@ -82,7 +82,7 @@ async function insertionSort() {
         await wait();
         bar[j + 1].removeChild(jplus1tag);
 
-        bar[i].style.background = "#08605F";
+        bar[i].style.background = "#0C9795";
 
     }
     jtag.remove();

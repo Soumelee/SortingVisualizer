@@ -35,10 +35,10 @@ async function bubbleSort() {
 
     for (let i = 0; i < bar.length; i++) {
         for (let j = 1; j < bar.length - i; j++) {
-            bar[j].style.background = "#001F54";
+            bar[j].style.background = "#1F71FF";
             bar[j].appendChild(jtag);
 
-            bar[j - 1].style.background = "#001F54";
+            bar[j - 1].style.background = "#1F71FF";
             bar[j - 1].appendChild(jminus1tag);
 
             await wait();
@@ -66,7 +66,7 @@ async function bubbleSort() {
             bar[j].style.background = "gray";
             bar[j - 1].style.background = "gray";
         }
-        bar[bar.length - 1 - i].style.background = "#08605F";
+        bar[bar.length - 1 - i].style.background = "#0C9795";
     }
     pause.style.visibility = "hidden";
     // bar[1].removeChild(jtag);

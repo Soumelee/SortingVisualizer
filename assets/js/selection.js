@@ -42,7 +42,7 @@ async function selectionSort() {
         bar[i].style.background = "#9B7EDE";//i bar where swap will happen is purple
         bar[i].appendChild(itag);
         for (let j = i + 1; j < bar.length; j++) {
-            bar[j].style.background = "#001F54"; //current j bar is blue
+            bar[j].style.background = "#1F71FF"; //current j bar is blue
             bar[j].appendChild(jtag);
 
 
@@ -56,7 +56,7 @@ async function selectionSort() {
 
 
                 minValue = j;
-                bar[minValue].style.background = "#A62639";//new min red bar                
+                bar[minValue].style.background = "#D2374F";//new min red bar                
                 bar[minValue].appendChild(smalltag);
                 smalltagTracker = j;
                 await wait();
@@ -86,7 +86,7 @@ async function selectionSort() {
         }
 
         bar[minValue].style.background = "gray";
-        bar[i].style.background = "#08605F";//green
+        bar[i].style.background = "#0C9795";//green
 
         smalltag.remove();
     }

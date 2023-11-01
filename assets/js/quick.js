@@ -1,4 +1,4 @@
-//#08605f is green color for final sorted element or bar
+//#0C9795 is green color for final sorted element or bar
 async function quickSort() {
     const pause = document.querySelector(".pause");
     pause.style.visibility = "visible";
@@ -50,8 +50,8 @@ async function quickSortfun(bar, barBefore, l, r) {
     }
     else {
         if (l >= 0 && r >= 0 && l < bar.length && r < bar.length) {
-            bar[r].style.background = "#08605f";//green
-            bar[l].style.background = "#08605f";
+            bar[r].style.background = "#0C9795";//green
+            bar[l].style.background = "#0C9795";
         }
     }
 }
@@ -82,7 +82,7 @@ async function partition(bar, barBefore, l, r) {
     }
 
 
-    bar[r].style.background = "#a62639";//pivot element red 
+    bar[r].style.background = "#D2374F";//pivot element red 
     bar[r].appendChild(pivottag);
 
     for (let j = l; j <= r; j++) {
@@ -145,12 +145,12 @@ async function partition(bar, barBefore, l, r) {
     bar[i].style.boxShadow = "";
 
     bar[r].style.background = "pink";
-    bar[i].style.background = "#08605f";
+    bar[i].style.background = "#0C9795";
 
     await wait();
 
     for (let k = 0; k < bar.length; k++) {
-        if (!bar[k].style.background === "#08605f") {
+        if (!bar[k].style.background === "#0C9795") {
             bar[k].style.background = "gray";
         }
     }
