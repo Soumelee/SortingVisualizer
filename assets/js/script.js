@@ -87,15 +87,14 @@ function customSize() {
         }
     showBars(array);
 }
-function customArray(){
-    document.querySelector(".pause").style.visibility = "hidden";
-    enableButtons();
-    
+function customArray(){       
     const customArrayInput = document.getElementById("customArray");
     if(customArrayInput.value===""){
         alert("🧐 No custom array values given");
         return;
     }
+    document.querySelector(".pause").style.visibility = "hidden";
+    enableButtons();
     const customArrayStr = customArrayInput.value.trim();
     const array = customArrayStr.split(",").map(item => parseInt(item.trim(), 10));
     if(array.length==1){
@@ -130,6 +129,7 @@ function disableButtons() {
 
     let buttons1 = document.querySelectorAll("button[id$='bubble1'], button[id$='insertion1'], button[id$='selection1'], button[id$='merge1'], button[id$='quick1']");
     for (let i = 0; i < buttons1.length; i++) {
+        buttons1[i].disabled = true;
         buttons1[i].style.cursor = "not-allowed";        
     }
 }

@@ -142,3 +142,8 @@ button:hover {
     line-height: initial;
     margin-top: 5px;
 }
+@media screen and (max-width: 500px){
+    #info{
+        font-size: 70%;
+    }
+}
