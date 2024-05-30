@@ -33,7 +33,7 @@ It finds the smallest element in a list or collection, and puts it at the beginn
 
 ### <i>Our Team Members: <i>
 
-[Soumili Mondal](https://github.com/Soumelee) (team leader) <br>
+[Soumili Mondal](https://github.com/Soumelee) <br>
 [Utsab Ghosh](https://github.com/Utsab2001) <br>
 [Anamika Panda](https://github.com/anamikapanda) <br>
 [Rana Das](https://github.com/Ranadas2001)
